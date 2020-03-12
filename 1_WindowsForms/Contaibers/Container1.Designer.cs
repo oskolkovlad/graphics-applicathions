@@ -1,6 +1,6 @@
 ﻿namespace Contaibers
 {
-    partial class Form1
+    partial class Container1
     {
         /// <summary>
         /// Обязательная переменная конструктора.

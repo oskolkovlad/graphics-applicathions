@@ -1,6 +1,6 @@
 ﻿namespace Containers
 {
-    partial class Form2
+    partial class Container2
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Containers
 {
-    public partial class Form2 : Form
+    public partial class Container2 : Form
     {
-        public Form2()
+        public Container2()
         {
             InitializeComponent();
 
