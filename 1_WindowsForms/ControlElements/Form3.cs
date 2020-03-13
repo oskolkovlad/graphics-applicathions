@@ -42,6 +42,11 @@ namespace ControlElements
             saveFileDialog1.InitialDirectory = @"Q:/Projects/Learn/Graphics_applications/1_WindowsForms/ControlElements/bin/Debug";
             saveFileDialog1.OverwritePrompt = true;
 
+
+            textBox3.Validating += textBox3_Validating;
+            errorProvider1.BlinkStyle = ErrorBlinkStyle.BlinkIfDifferentError;
+            errorProvider1.BlinkRate = 1000;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,6 +79,38 @@ namespace ControlElements
             string text = textBox2.Text;
             File.WriteAllText(fileName, text);
             MessageBox.Show("Файл сохранен");
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            //if (textBox3.Text.Length > 10)
+            //{
+            //    errorProvider1.SetError(textBox3, "Слишком много");
+            //}
+            //else if (textBox3.Text.Length < 3)
+            //{
+            //    errorProvider1.SetError(textBox3, "Слишком мало");
+            //}
+            //else
+            //{
+            //    errorProvider1.Clear();
+            //}
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Length > 10)
+            {
+                errorProvider1.SetError(textBox3, "Слишком много");
+            }
+            else if (textBox3.Text.Length < 3)
+            {
+                errorProvider1.SetError(textBox3, "Слишком мало");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
         }
     }
 }
