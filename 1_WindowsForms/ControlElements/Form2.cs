@@ -19,17 +19,31 @@ namespace ControlElements
 
             listView1.SmallImageList = imageList1;
 
+
             treeView1.BeforeExpand += treeView1_BeforeExpand;
             treeView1.BeforeSelect += treeView1_BeforeSelect;
-
             FillDriveNodes();
+
 
             trackBar1.TickStyle = TickStyle.Both;
             trackBar1.Scroll += trackBar1_Scroll;
 
+
             timer1.Interval = 500;
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
+
+
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.MinDate = DateTime.Parse("01.01.2000");
+            label1.Text = dateTimePicker1.Value.ToString();
+
+
+            monthCalendar1.ShowTodayCircle = true;
+            monthCalendar1.SelectionStart = DateTime.Parse("07.03.2020");
+            monthCalendar1.SelectionEnd = DateTime.Parse("09.03.2020");
+            monthCalendar1.AddAnnuallyBoldedDate(DateTime.Parse("11.03.2020"));
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
